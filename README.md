@@ -1,9 +1,7 @@
-
-
 # 🔍 LeadScrapeLite — Simple Lead Generation Tool
 
-**LeadScrapeLite** adalah alat ringan berbasis web untuk *lead generation* (pengumpulan calon pelanggan) yang menggabungkan kekuatan **Google Custom Search API** dan **email scraping** otomatis dari situs web.
-Dengan antarmuka interaktif menggunakan **Streamlit**, pengguna cukup mengetikkan kata kunci (misalnya: *startup AI Indonesia*) — aplikasi akan mencari situs yang relevan, mengekstrak email kontak dari halaman utama dan halaman kontak, lalu menyajikan hasilnya secara visual dan dapat diekspor.
+**LeadScrapeLite** is a lightweight web-based lead generation tool that combines the power of the **Google Custom Search API** and automatic **email scraping** from websites.
+With an interactive interface powered by **Streamlit**, users only need to enter a keyword (e.g., *startup AI Indonesia*) — the app will search for relevant websites, extract contact emails from the homepage and contact page, then display the results visually and allow exporting.
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue" />
@@ -14,145 +12,145 @@ Dengan antarmuka interaktif menggunakan **Streamlit**, pengguna cukup mengetikka
 
 ---
 
-## 🚀 Fitur Unggulan
+## 🚀 Key Features
 
-* 🔍 **Integrasi Google Search** via Custom Search API
-* 📬 **Ekstraksi email** dari halaman utama dan `/contact`
-* 💾 **Penyimpanan otomatis** hasil scraping ke database SQLite
-* 🔄 **Progress bar interaktif** selama scraping berlangsung
-* 📋 **Tabel hasil yang dapat difilter dan diperluas**
-* 📊 **Visualisasi data**: diagram lingkaran, histogram, dan word cloud
-* 📤 **Ekspor hasil ke CSV** untuk kebutuhan lanjutan atau CRM
-
----
-
-## 🧪 Contoh Hasil
-
-### 📋 Tabel Leads
-
-* Menampilkan URL, Judul, Deskripsi, dan Email
-* Dapat diperluas untuk melihat seluruh detail
-* Tombol untuk membuka situs langsung
-
-### 📈 Analisis Visual
-
-* Pie chart distribusi email berdasarkan domain
-* Histogram jumlah email per situs
-* Word cloud dari meta description situs hasil pencarian
+* 🔍 **Google Search Integration** via Custom Search API
+* 📬 **Email extraction** from homepage and `/contact` page
+* 💾 **Automatic saving** of scraping results to SQLite database
+* 🔄 **Interactive progress bar** during the scraping process
+* 📋 **Filterable and expandable results table**
+* 📊 **Data visualization**: pie charts, histograms, and word clouds
+* 📤 **Export to CSV** for CRM or further use
 
 ---
 
-## 🧑‍💻 Demo Langsung (Opsional)
+## 🧪 Example Output
 
-> Coming soon: Notebook interaktif atau versi demo online via Streamlit Cloud / Hugging Face Spaces.
+### 📋 Leads Table
+
+* Shows URL, Title, Description, and Email
+* Expandable rows for full details
+* Button to open the site directly
+
+### 📈 Visual Analysis
+
+* Pie chart of email distribution by domain
+* Histogram of email count per site
+* Word cloud from the meta descriptions of search results
 
 ---
 
-## ⚙️ Teknologi yang Digunakan
+## 🧑‍💻 Live Demo (Optional)
 
-| Kategori      | Teknologi / Library      |
+[![Watch Demo Video](https://img.icons8.com/fluency/344/play-button-circled.png)](https://drive.google.com/file/d/1Ut5J01QZF8YotMQtCs7gJ6EOjdFfDl7F/view?usp=sharing)
+
+---
+
+## ⚙️ Tech Stack
+
+| Category      | Technology / Library     |
 | ------------- | ------------------------ |
 | Web UI        | Streamlit                |
 | Web Scraping  | BeautifulSoup, Requests  |
-| API Pencarian | Google Custom Search API |
-| Visualisasi   | Matplotlib, WordCloud    |
+| Search API    | Google Custom Search API |
+| Visualization | Matplotlib, WordCloud    |
 | Data Handling | Pandas, SQLAlchemy       |
-| Database      | SQLite (leads.db)        |
+| Database      | SQLite (`leads.db`)      |
 
 ---
 
-## 🔧 Cara Instalasi
+## 🔧 Installation Steps
 
-### 1. Clone repositori ini
+### 1. Clone this repository
 
 ```bash
 git clone https://github.com/your-username/LeadScrapeLite.git
 cd LeadScrapeLite
 ```
 
-### 2. Buat virtual environment (opsional tapi disarankan)
+### 2. Create a virtual environment (optional but recommended)
 
 ```bash
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 ```
 
-### 3. Instalasi dependencies
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Tambahkan kredensial Google API
+### 4. Add Google API credentials
 
-Buat file `.env` atau langsung ubah di `app.py`:
+Create a `.env` file or directly modify `app.py`:
 
 ```python
 api_key = "YOUR_API_KEY"
 search_engine_id = "YOUR_CUSTOM_SEARCH_ENGINE_ID"
 ```
 
-🔑 **Cara mendapatkannya:**
+🔑 **How to get them:**
 
-* Masuk ke [Google Cloud Console](https://console.cloud.google.com/)
-* Buat proyek baru dan aktifkan **Custom Search API**
-* Buat mesin pencari kustom di [Google Programmable Search Engine](https://programmablesearchengine.google.com/)
+* Go to [Google Cloud Console](https://console.cloud.google.com/)
+* Create a new project and enable **Custom Search API**
+* Set up a custom search engine at [Google Programmable Search Engine](https://programmablesearchengine.google.com/)
 
 ---
 
-## ▶️ Jalankan Aplikasinya
+## ▶️ Run the App
 
 ```bash
 streamlit run app.py
 ```
 
-Akses aplikasi di browser: [http://localhost:8501](http://localhost:8501)
+Then open it in your browser: [http://localhost:8501](http://localhost:8501)
 
 ---
 
-## 🗂 Struktur Proyek
+## 🗂 Project Structure
 
 ```
 LeadScrapeLite/
-├── app.py               # Streamlit app utama
-├── leads.db             # Database SQLite (dibuat otomatis)
-├── requirements.txt     # Daftar dependency Python
-├── README.md            # Dokumentasi proyek
+├── app.py               # Main Streamlit app
+├── leads.db             # SQLite database (auto-created)
+├── requirements.txt     # List of Python dependencies
+├── README.md            # Project documentation
 ```
 
 ---
 
-## 📦 Dependencies Utama
+## 📦 Key Dependencies
 
-* **[Streamlit](https://streamlit.io/)** — framework antarmuka pengguna berbasis Python
-* **[Requests](https://docs.python-requests.org/)** — HTTP client untuk akses web
-* **[BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/)** — parser HTML untuk scraping
-* **[Pandas](https://pandas.pydata.org/)** — manipulasi dan analisis data
-* **[SQLAlchemy](https://www.sqlalchemy.org/)** — ORM untuk interaksi database
-* **[WordCloud](https://amueller.github.io/word_cloud/)** — visualisasi teks berbentuk awan kata
-* **[Matplotlib](https://matplotlib.org/)** — grafik dan visualisasi data
-
----
-
-## ⚠️ Keterbatasan Saat Ini
-
-* ❗ Hanya men-scrape halaman HTML statis (tidak mendukung JS-rendered site)
-* ❗ Batas penggunaan Google API tergantung pada **free-tier quota**
-* ❗ Belum ada validasi email otomatis (misal: email palsu, disposable, spam)
+* **[Streamlit](https://streamlit.io/)** — Python-based UI framework
+* **[Requests](https://docs.python-requests.org/)** — HTTP client for accessing the web
+* **[BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/)** — HTML parser for scraping
+* **[Pandas](https://pandas.pydata.org/)** — Data analysis and manipulation
+* **[SQLAlchemy](https://www.sqlalchemy.org/)** — ORM for database operations
+* **[WordCloud](https://amueller.github.io/word_cloud/)** — Word cloud text visualization
+* **[Matplotlib](https://matplotlib.org/)** — Charts and visualizations
 
 ---
 
-## 🌱 Pengembangan ke Depan
+## ⚠️ Current Limitations
 
-* 🧠 Integrasi model AI (LLM / NER) untuk menyaring email penting (e.g., HR, CEO)
-* 📊 Penilaian kualitas domain (domain authority scoring)
-* 📁 Ekspor hasil dalam format standar CRM (dengan kategori/tag)
-* ☁️ Hosting di platform publik seperti Streamlit Cloud atau Hugging Face Spaces
-* 🔐 Tambahkan rate limiter dan retry mechanism untuk scraping
+* ❗ Only works on static HTML pages (not compatible with JavaScript-rendered sites)
+* ❗ Google API usage is limited by the **free-tier quota**
+* ❗ No email validation yet (e.g., fake, disposable, or spam emails)
 
 ---
 
-## 🙋 Tentang Pengembang
+## 🌱 Future Improvements
+
+* 🧠 Integrate AI models (LLM / NER) to prioritize important emails (e.g., HR, CEO)
+* 📊 Domain quality scoring (e.g., domain authority)
+* 📁 Export in standard CRM formats (with tags/categories)
+* ☁️ Host the app on public platforms like Streamlit Cloud or Hugging Face Spaces
+* 🔐 Add rate limiter and retry mechanism for stable scraping
+
+---
+
+## 🙋 About the Developer
 
 **David Mario Yohanes Samosir**
 💼 IT & Digital Services Enthusiast | Python Developer
@@ -162,6 +160,6 @@ LeadScrapeLite/
 
 ---
 
-> Jika kamu suka proyek ini, bantu beri ⭐ di GitHub dan bagikan ke sesama praktisi lead gen atau digital marketing!
+> If you like this project, please give it a ⭐ on GitHub and share it with fellow lead gen or digital marketing practitioners!
 
 ---
